@@ -1,0 +1,18 @@
+##################################################################
+Installation Notes:
+
+unzip package end edit config.php, set options dependant on
+your shoutcast server.
+Upload(ftp) contents to directory on your website.
+
+Usage:
+open up index.php or whatever page you want the status to display on,
+file must end with .php
+enter in the following code wherever you want the status of your
+shoutcast server displayed.
+//------start sc status snippet-----
+include('./sc_status.php');
+//-----end sc status snippet-------
+
+\ALL DONE/
+>>EOF
