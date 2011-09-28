@@ -10,6 +10,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //do not get cute and monkey with anything below, unless you know what u are doing.
 include ('./config.php');
+
 // override ini settings for script execution time, we dont need a minute to decide
 // if a server is up or not, 10 seconds should be sufficient.
 ini_set("max_execution_time", "10");
@@ -68,7 +69,7 @@ if($sock_init != 'FALSE'){
  	}else if($dsp_connected != '1' && $usetext == 'yes'){
  	    echo ''.$station_name.' - '.$offline_text.'';
  	}
-}
+  }
 
 }//end 7.html
 	
