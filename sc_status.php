@@ -1,11 +1,11 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////
 // script name: sc status
-// date: 8/20/2010
+// date: 10/01/2012
 // author: davestj@gmail.com
 // cause: checks status of a shoutcast server and display's online or offline status
-// version: 1.0 final
-// platform independant
+// version: 1.1 b
+// platform independent
 // file name: sc_status.php
 ////////////////////////////////////////////////////////////////////////////////
 //do not get cute and monkey with anything below, unless you know what u are doing.
@@ -18,18 +18,18 @@ ini_set("max_execution_time", "10");
 //check config settings
 if($useimage == 'yes' && $usetext == 'yes'){
 	echo 'You must choose text display or image display but not both<br>
-		 please edit your config.php file<br>[ERROR: 1]';
+		 please edit your config.php file<br>';
 	exit();
 }
 //lets initiate a tcp socket connection to determine whether or not the server
-//is actualy up.
-$scp = @fsockopen($sc_ip, $sc_port, &$errno, &$errstr, 30);
+//is actually up.
+$scp = @fsockopen($sc_ip, $sc_port, $errno, $errstr, 30);
 //let me know where or not its up
 	if(!$scp){
 	    $sock_init = 'FALSE';
 	}
 
-//show them whether or not the server is actualy up or not
+//show them whether or not the server is actually up or not
 	if($sock_init == 'FALSE'){
 		if($useimage == 'yes'){
 		    echo ''.$station_name.' <img srv='.$offline_imgurl.'>';
@@ -46,8 +46,8 @@ $scp = @fsockopen($sc_ip, $sc_port, &$errno, &$errstr, 30);
 //close it up
 @fclose($scp);
 //while we got the page open into memory lets bomb n parse baby.
-$sc7 = ereg_replace(".*<body>", "", $sc7);
-$sc7 = ereg_replace("</body>.*", ",", $sc7);
+$sc7 = preg_replace('/^\<body\>/', "", $sc7);
+$sc7 = preg_replace('/^\<\/body\>/', ",", $sc7);
 $sc_contents = explode(",",$sc7);
 $dummy = $sc_contents[0];
 $dsp_connected = $sc_contents[1];
