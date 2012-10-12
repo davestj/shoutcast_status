@@ -1,0 +1,3 @@
+* Fri October 12 2012 David St John <davestj@gmail.com>
+- ereg_replace is deprecated as of php 5.3.17, moved to preg_replace
+- New regexp updated
