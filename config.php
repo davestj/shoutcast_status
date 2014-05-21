@@ -1,15 +1,15 @@
 <?php
-////////////////////////////////////////////////////////////////////////////////
-// script name: sc status
-// date: 8/20/2010
-// author: davestj@gmail.com
-// cause: checks status of a shoutcast server and display's online or offline status
-// version: 1.0 final
-// platform independant
-// filename: config.php
-////////////////////////////////////////////////////////////////////////////////
+/**
+* @package sc status
+* @date 8/20/2010
+* @author davestj@gmail.com
+* @description checks status of a shoutcast server and display's online or offline status
+* @version 1.0 final
+* @abstract configuration file for settings
+* @filename config.php
+*/
 
-//configuration, please edit options below to fit your webcasting setup.
+//configuration, please edit options below to fit your web casting setup.
 $sc_ip              = '127.0.0.1'; //static ip address of server, do not use dns names (static ip is faster)
 $sc_port            = '8000'; //port number of shoutcast server
 

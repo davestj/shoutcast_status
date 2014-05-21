@@ -1,14 +1,13 @@
 <?php
-////////////////////////////////////////////////////////////////////////////////
-// script name: sc status
-// date: 10/01/2012
-// author: davestj@gmail.com
-// cause: checks status of a shoutcast server and display's online or offline status
-// version: 1.1 b
-// platform independent
-// file name: sc_status.php
-////////////////////////////////////////////////////////////////////////////////
-//do not get cute and monkey with anything below, unless you know what u are doing.
+/**
+ * @package sc status
+ * @date 8/20/2010
+ * @author davestj@gmail.com
+ * @description checks status of a shoutcast server and display's online or offline status
+ * @version 1.0 final
+ * @abstract Procedural script to get data from Shoutcast D.N.A.S
+ * @filename sc_status.php
+ */
 include ('./config.php');
 
 // override ini settings for script execution time, we dont need a minute to decide
